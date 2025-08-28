@@ -80,7 +80,7 @@ pipeline {
                 sh '''
                     ./shiftleft image  \
                        --initiator=upwind-demo \
-                       --docker-image=${IMAGE_NAME}:latest  \
+                       --docker-image=${IMAGE_NAME}  \
                        --docker-pull=false \
                        --upwind-client-id=$UPWIND_CLIENT_ID  \
                        --upwind-client-secret=$UPWIND_CLIENT_SECRET
