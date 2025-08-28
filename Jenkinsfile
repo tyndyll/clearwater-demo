@@ -82,8 +82,8 @@ pipeline {
                        --initiator=upwind-demo \
                        --docker-image=${IMAGE_NAME}:latest  \
                        --docker-pull=false \
-                       --upwind-client-id=upwind-client-id  \
-                       --upwind-client-secret=upwind-client-secret
+                       --upwind-client-id=$UPWIND_CLIENT_ID  \
+                       --upwind-client-secret=$UPWIND_CLIENT_SECRET
                 '''
                 }
             }
