@@ -51,8 +51,7 @@ pipeline {
                       --data "client_secret=$UPWIND_CLIENT_SECRET" \
                       --data "grant_type=client_credentials" > token_response.json'''
                     // Use separate commands for token extraction to avoid escape character issues
-                    sh 'cat token_response.json | grep access_token > token_line.txt'
-                    sh 'cat token_line.txt | cut -d\" -f4 > access_token.txt'
+                    sh 'jq -r .access_token token_response.json > access_token.txt'                    
                     sh 'echo "Authentication completed"'
                 }
             }
